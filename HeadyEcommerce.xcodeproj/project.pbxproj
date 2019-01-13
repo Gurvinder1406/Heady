@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		AB8AF69321EBAE3C00746323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF69221EBAE3C00746323 /* AppDelegate.swift */; };
-		AB8AF69521EBAE3C00746323 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF69421EBAE3C00746323 /* ViewController.swift */; };
+		AB8AF69521EBAE3C00746323 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF69421EBAE3C00746323 /* MainViewController.swift */; };
 		AB8AF69821EBAE3C00746323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8AF69621EBAE3C00746323 /* Main.storyboard */; };
 		AB8AF69A21EBAE3D00746323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8AF69921EBAE3D00746323 /* Assets.xcassets */; };
 		AB8AF69D21EBAE3D00746323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8AF69B21EBAE3D00746323 /* LaunchScreen.storyboard */; };
+		AB8AF6A821EBB4ED00746323 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF6A521EBB4ED00746323 /* RootViewController.swift */; };
+		AB8AF6A921EBB4ED00746323 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF6A621EBB4ED00746323 /* DrawerController.swift */; };
+		AB8AF6AA21EBB4ED00746323 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF6A721EBB4ED00746323 /* MenuViewController.swift */; };
+		AB8AF6AE21EBB99A00746323 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF6AC21EBB99A00746323 /* URLConstants.swift */; };
+		AB8AF6AF21EBB99A00746323 /* WebserviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF6AD21EBB99A00746323 /* WebserviceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB8AF68F21EBAE3C00746323 /* HeadyEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8AF69221EBAE3C00746323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB8AF69421EBAE3C00746323 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB8AF69421EBAE3C00746323 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AB8AF69721EBAE3C00746323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB8AF69921EBAE3D00746323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB8AF69C21EBAE3D00746323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB8AF69E21EBAE3D00746323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB8AF6A521EBB4ED00746323 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		AB8AF6A621EBB4ED00746323 /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
+		AB8AF6A721EBB4ED00746323 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		AB8AF6AC21EBB99A00746323 /* URLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		AB8AF6AD21EBB99A00746323 /* WebserviceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,35 @@
 		AB8AF69121EBAE3C00746323 /* HeadyEcommerce */ = {
 			isa = PBXGroup;
 			children = (
+				AB8AF6AB21EBB94E00746323 /* Networking */,
+				AB8AF6A421EBB4D200746323 /* Drawer */,
 				AB8AF69221EBAE3C00746323 /* AppDelegate.swift */,
-				AB8AF69421EBAE3C00746323 /* ViewController.swift */,
+				AB8AF69421EBAE3C00746323 /* MainViewController.swift */,
 				AB8AF69621EBAE3C00746323 /* Main.storyboard */,
 				AB8AF69921EBAE3D00746323 /* Assets.xcassets */,
 				AB8AF69B21EBAE3D00746323 /* LaunchScreen.storyboard */,
 				AB8AF69E21EBAE3D00746323 /* Info.plist */,
 			);
 			path = HeadyEcommerce;
+			sourceTree = "<group>";
+		};
+		AB8AF6A421EBB4D200746323 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				AB8AF6A621EBB4ED00746323 /* DrawerController.swift */,
+				AB8AF6A721EBB4ED00746323 /* MenuViewController.swift */,
+				AB8AF6A521EBB4ED00746323 /* RootViewController.swift */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
+		AB8AF6AB21EBB94E00746323 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AB8AF6AC21EBB99A00746323 /* URLConstants.swift */,
+				AB8AF6AD21EBB99A00746323 /* WebserviceManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB8AF69521EBAE3C00746323 /* ViewController.swift in Sources */,
+				AB8AF6AF21EBB99A00746323 /* WebserviceManager.swift in Sources */,
+				AB8AF69521EBAE3C00746323 /* MainViewController.swift in Sources */,
+				AB8AF6AA21EBB4ED00746323 /* MenuViewController.swift in Sources */,
 				AB8AF69321EBAE3C00746323 /* AppDelegate.swift in Sources */,
+				AB8AF6AE21EBB99A00746323 /* URLConstants.swift in Sources */,
+				AB8AF6A921EBB4ED00746323 /* DrawerController.swift in Sources */,
+				AB8AF6A821EBB4ED00746323 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
