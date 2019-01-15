@@ -55,7 +55,7 @@ class WebserviceManager: NSObject {
     }
 
     
-    func getJsonObject(urlString: String, completion: @escaping (_ isSuccess: Bool, _ reason: String ,_ dictionary: NSDictionary?) -> Void) {
+    func getJsonObject(urlString: String, completion: @escaping (_ isSuccess: Bool, _ reason: String ,_ dictionary: [String: AnyObject]?) -> Void) {
         
         if let url = URL(string: urlString) {
             let apiRequest = NSMutableURLRequest(url: url)
@@ -73,9 +73,9 @@ class WebserviceManager: NSObject {
                     completion(false, "Data not Found !", nil)
                 } else if (urlResponse as? HTTPURLResponse)?.statusCode == 200 {
                     do {
-                        let parsedData: NSDictionary! = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary ?? NSDictionary()
+                        let parsedData: [String: AnyObject]! = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: AnyObject] ?? [String: AnyObject]()
                         print("Parsed Data -> \(parsedData!)")
-                        completion(true, "", parsedData)
+                        completion(true, "", parsedData!)
                     } catch {
                         print(error)
                         completion(false, "\(error.localizedDescription)", nil)

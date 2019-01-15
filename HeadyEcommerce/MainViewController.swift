@@ -10,9 +10,12 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    static var dict_categoriesAndProductsData: Dictionary<String, AnyObject>! = Dictionary<String, AnyObject>() //[String: AnyObject]! = [String: AnyObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupDrawer()
+        self.getAllCategoriesAndProducts()
     }
 
 }
@@ -38,3 +41,24 @@ extension MainViewController {
     
 }
 
+
+extension MainViewController {
+    
+    func getAllCategoriesAndProducts() {
+        
+        WebserviceManager.webserviceInstance.getJsonObject(urlString: URLConstants.getCategoriesAndProducts()) {
+            
+            (isSuccess, reason, dictionaryObj) in
+            MainViewController.dict_categoriesAndProductsData = dictionaryObj!
+//            print(MainViewController.dict_categoriesAndProductsData!)
+            let categoryArray = MainViewController.dict_categoriesAndProductsData!["categories"] as! Array<AnyObject>
+            print(categoryArray)
+            for category in categoryArray {
+
+            }
+        }
+    }
+    
+    
+    
+}
