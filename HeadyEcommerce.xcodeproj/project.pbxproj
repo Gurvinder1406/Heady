@@ -17,6 +17,7 @@
 		AB8AF6AA21EBB4ED00746323 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF6A721EBB4ED00746323 /* MenuViewController.swift */; };
 		AB8AF6AE21EBB99A00746323 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF6AC21EBB99A00746323 /* URLConstants.swift */; };
 		AB8AF6AF21EBB99A00746323 /* WebserviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF6AD21EBB99A00746323 /* WebserviceManager.swift */; };
+		ABEB11AD21F4E0E60078075C /* CategoriesAndProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEB11AC21F4E0E60078075C /* CategoriesAndProducts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AB8AF6A721EBB4ED00746323 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		AB8AF6AC21EBB99A00746323 /* URLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
 		AB8AF6AD21EBB99A00746323 /* WebserviceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceManager.swift; sourceTree = "<group>"; };
+		ABEB11AC21F4E0E60078075C /* CategoriesAndProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAndProducts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				AB8AF6A421EBB4D200746323 /* Drawer */,
 				AB8AF69221EBAE3C00746323 /* AppDelegate.swift */,
 				AB8AF69421EBAE3C00746323 /* MainViewController.swift */,
+				ABEB11AC21F4E0E60078075C /* CategoriesAndProducts.swift */,
 				AB8AF69621EBAE3C00746323 /* Main.storyboard */,
 				AB8AF69921EBAE3D00746323 /* Assets.xcassets */,
 				AB8AF69B21EBAE3D00746323 /* LaunchScreen.storyboard */,
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8AF6AF21EBB99A00746323 /* WebserviceManager.swift in Sources */,
+				ABEB11AD21F4E0E60078075C /* CategoriesAndProducts.swift in Sources */,
 				AB8AF69521EBAE3C00746323 /* MainViewController.swift in Sources */,
 				AB8AF6AA21EBB4ED00746323 /* MenuViewController.swift in Sources */,
 				AB8AF69321EBAE3C00746323 /* AppDelegate.swift in Sources */,
