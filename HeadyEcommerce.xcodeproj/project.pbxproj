@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D55529021FA298400F311A2 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D55528F21FA298400F311A2 /* ProductList.swift */; };
+		1D55529221FA29FB00F311A2 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D55529121FA29FB00F311A2 /* ProductListCell.swift */; };
 		1D6AE9A721F5BCBD004BE9FE /* DataOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6AE9A621F5BCBD004BE9FE /* DataOperator.swift */; };
 		AB8AF69321EBAE3C00746323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF69221EBAE3C00746323 /* AppDelegate.swift */; };
 		AB8AF69521EBAE3C00746323 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AF69421EBAE3C00746323 /* MainViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D55528F21FA298400F311A2 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
+		1D55529121FA29FB00F311A2 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		1D6AE9A621F5BCBD004BE9FE /* DataOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataOperator.swift; sourceTree = "<group>"; };
 		AB8AF68F21EBAE3C00746323 /* HeadyEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8AF69221EBAE3C00746323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 				AB8AF69221EBAE3C00746323 /* AppDelegate.swift */,
 				AB8AF69421EBAE3C00746323 /* MainViewController.swift */,
 				1D6AE9A621F5BCBD004BE9FE /* DataOperator.swift */,
+				1D55528F21FA298400F311A2 /* ProductList.swift */,
+				1D55529121FA29FB00F311A2 /* ProductListCell.swift */,
 				AB8AF69621EBAE3C00746323 /* Main.storyboard */,
 				AB8AF69921EBAE3D00746323 /* Assets.xcassets */,
 				AB8AF69B21EBAE3D00746323 /* LaunchScreen.storyboard */,
@@ -181,6 +187,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8AF6AF21EBB99A00746323 /* WebserviceManager.swift in Sources */,
+				1D55529021FA298400F311A2 /* ProductList.swift in Sources */,
+				1D55529221FA29FB00F311A2 /* ProductListCell.swift in Sources */,
 				ABEB11AD21F4E0E60078075C /* CategoriesAndProducts.swift in Sources */,
 				AB8AF69521EBAE3C00746323 /* MainViewController.swift in Sources */,
 				AB8AF6AA21EBB4ED00746323 /* MenuViewController.swift in Sources */,
