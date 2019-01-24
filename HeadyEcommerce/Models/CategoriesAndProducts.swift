@@ -50,6 +50,10 @@ class Products: Codable {
         variants = try decodedValues.decode(Array<Variants>.self, forKey: .variants)
     }
     
+    func printProduct() {
+        print("Product: id - \(self.id!), name - \(self.name!), dateAdded - \(self.date_added!)")
+    }
+    
 }
 
 struct Tax: Codable {
@@ -66,14 +70,16 @@ struct Variants: Codable {
 
 class CategoryAndRanking: Codable {
     var categories: Array<CategoriesAndProducts>? = []
-    var rankings: [Rankings]?
+    var rankings: Array<Rankings>?
     
     private enum keys: CodingKey {
         case categories
         case rankings
     }
     
-    init(categories: Array<CategoriesAndProducts>, rankings: [Rankings]) {
+    init() { }
+    
+    init(categories: Array<CategoriesAndProducts>, rankings: Array<Rankings>) {
         self.categories = categories
         self.rankings = rankings
     }
@@ -81,21 +87,21 @@ class CategoryAndRanking: Codable {
     required public init(from decoder: Decoder) throws {
         let decodedValues = try decoder.container(keyedBy: keys.self)
         categories = try decodedValues.decode(Array<CategoriesAndProducts>.self, forKey: .categories)
-        rankings = try decodedValues.decode([Rankings].self, forKey: .rankings)
+        rankings = try decodedValues.decode(Array<Rankings>.self, forKey: .rankings)
      }
 
 }
 
 class Rankings: Codable {
     var ranking: String?
-    var products: [RankingProducts]?
+    var products: Array<RankingProducts>?
     
     private enum keys: CodingKey {
         case ranking
         case products
     }
     
-    init(ranking: String, products: [RankingProducts]) {
+    init(ranking: String, products: Array<RankingProducts>) {
         self.ranking = ranking
         self.products = products
     }
@@ -103,7 +109,7 @@ class Rankings: Codable {
     required public init(from decoder: Decoder) throws {
         let decodedValues = try decoder.container(keyedBy: keys.self)
         ranking = try decodedValues.decode(String.self, forKey: .ranking)
-        products = try decodedValues.decode([RankingProducts].self, forKey: .products)
+        products = try decodedValues.decode(Array<RankingProducts>.self, forKey: .products)
     }
     
 }
@@ -111,4 +117,6 @@ class Rankings: Codable {
 struct RankingProducts: Codable {
     var id: Int?
     var order_count : Int?
+    var view_count : Int?
+    var shares : Int?
 }
