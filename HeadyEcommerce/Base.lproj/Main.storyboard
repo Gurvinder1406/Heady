@@ -231,10 +231,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k4T-nV-FHJ">
-                                        <rect key="frame" x="111" y="22" width="77" height="30"/>
+                                        <rect key="frame" x="111" y="22" width="76.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="f7y-PQ-wRZ" id="Idx-kT-5AF"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,10 +260,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YM6-Ry-tZO">
-                                        <rect key="frame" x="74" y="22" width="77" height="30"/>
+                                        <rect key="frame" x="74" y="22" width="76.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="f7y-PQ-wRZ" id="jq8-Ml-Ymw"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -301,6 +307,8 @@
                         <outlet property="iv_ProductImage" destination="743-1Y-nye" id="bRM-Fh-jBO"/>
                         <outlet property="lbl_ProductPrice" destination="sEg-16-IkA" id="wbh-7I-4Ad"/>
                         <outlet property="lbl_productName" destination="PJL-N9-meP" id="0nB-vT-kc2"/>
+                        <outlet property="tf_Color" destination="YM6-Ry-tZO" id="kie-bz-4SC"/>
+                        <outlet property="tf_Size" destination="k4T-nV-FHJ" id="Sep-1g-1wT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCx-3I-kQi" userLabel="First Responder" sceneMemberID="firstResponder"/>

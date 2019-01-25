@@ -16,8 +16,6 @@ class ProductDetail: UIViewController {
     @IBOutlet weak var tf_Size: UITextField!
     @IBOutlet weak var tf_Color: UITextField!
     
-    
-    
     var product_Details: Products!
     var arr_Sizes: Array<Int>! = Array<Int>()
     var arr_Colors: Array<String>! = Array<String>()
@@ -29,6 +27,7 @@ class ProductDetail: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.initializeVariablesAndFields()
         self.setPriceColorSize()
         self.setProductDetails()
         
@@ -41,13 +40,42 @@ class ProductDetail: UIViewController {
 // MARK: Setup Data and UI
 extension ProductDetail {
     
+    func initializeVariablesAndFields() {
+        pv_Size.delegate = self
+        pv_Color.delegate = self
+        
+//        tf_Size.inputView = pv_Size
+        tf_Size.isEnabled = false
+        tf_Color.inputView = pv_Color
+        
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(closePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(closePicker))
+        
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        tf_Color.inputAccessoryView = toolBar
+        
+    }
+    
     func setProductDetails() {
         iv_ProductImage.image = UIImage(named: "productImage")
         lbl_productName.text = product_Details.name
-        lbl_ProductPrice.text = "@₹ \(self.calculateFinalPrice(price: arr_Price[0], tax: product_Details.tax?.value ?? 0.00))"
-        tf_Size.text = String(arr_Sizes[0])
-        tf_Color.text = arr_Colors[0]
-        
+        self.setVariantForProduct(index: 0)
+    }
+    
+    func setVariantForProduct(index: Int) {
+        lbl_ProductPrice.text = "@₹ \(self.calculateFinalPrice(price: arr_Price[index], tax: product_Details.tax?.value ?? 0.00))"
+        tf_Size.text = String(arr_Sizes[index])
+        tf_Color.text = arr_Colors[index]
     }
     
     func setPriceColorSize() {
@@ -68,21 +96,6 @@ extension ProductDetail {
 }
 
 
-// MARK: Textfield Delegate Methods
-
-extension ProductDetail: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == tf_Size {
-            
-        } else if textField == tf_Color {
-            
-        }
-    }
-    
-}
-
-
 // MARK: Picker Delegate Methods
 
 extension ProductDetail: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -93,9 +106,10 @@ extension ProductDetail: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        if pickerView == pv_Size {
-            return arr_Sizes.count
-        } else if pickerView == pv_Color {
+//        if pickerView == pv_Size {
+//            return arr_Sizes.count
+//        } else
+            if pickerView == pv_Color {
             return arr_Colors.count
         } else {
             return 0
@@ -103,7 +117,28 @@ extension ProductDetail: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+            if pickerView == pv_Color {
+                tf_Color.text = arr_Colors[row]
+                self.setVariantForProduct(index: row)
+            }
+//        else if pickerView == pv_Size {
+//            tf_Size.text = String(arr_Sizes[row])
+//        }
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == pv_Color {
+            return arr_Colors[row]
+        }
+//        else if pickerView == pv_Size {
+//            return String(arr_Sizes[row])
+//        }
+        else {
+            return ""
+        }
+    }
+    
+    @objc func closePicker() {
+        tf_Color.resignFirstResponder()
+    }
 }
