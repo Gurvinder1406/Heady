@@ -14,9 +14,6 @@ class ProductList: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for s in  arr_Products {
-            s.printProduct()
-        }
     }
     
 }
@@ -37,7 +34,21 @@ extension ProductList: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.performSegue(withIdentifier: Constants.Segues.ProductListToDetail.value(), sender: arr_Products[indexPath.row])
     }
 
+}
+
+
+// MARK: Navigation Methods
+extension ProductList {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == Constants.Segues.ProductListToDetail.value() {
+            let vc = segue.destination as! ProductDetail
+            vc.product_Details = (sender as! Products)
+        }
+    }
+    
 }

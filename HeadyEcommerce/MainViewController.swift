@@ -20,15 +20,15 @@ class MainViewController: UIViewController {
     
     @IBAction func showMostViewedProducts(_ sender: Any) {
         tag = 1
-        self.performSegue(withIdentifier: "HomeToProductList", sender: self)
+        self.performSegue(withIdentifier: Constants.Segues.HomeToProductList.value(), sender: self)
     }
     @IBAction func showMostOrderedProducts(_ sender: Any) {
         tag = 2
-        self.performSegue(withIdentifier: "HomeToProductList", sender: self)
+        self.performSegue(withIdentifier: Constants.Segues.HomeToProductList.value(), sender: self)
     }
     @IBAction func showMostSharedProducts(_ sender: Any) {
         tag = 3
-        self.performSegue(withIdentifier: "HomeToProductList", sender: self)
+        self.performSegue(withIdentifier: Constants.Segues.HomeToProductList.value(), sender: self)
     }
  
     
@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
 extension MainViewController {
     
     func getAllCategoriesAndProducts() {
-        WebserviceManager.webserviceInstance.getData(urlString: URLConstants.getCategoriesAndProducts(), completion: {
+        WebserviceManager.webserviceInstance.getData(urlString: Constants.sharedInstance.getCategoriesAndProducts(), completion: {
             (isSuccess, reason, data) in
 
             if isSuccess {
@@ -60,7 +60,7 @@ extension MainViewController {
 extension MainViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "HomeToProductList" {
+        if segue.identifier == Constants.Segues.HomeToProductList.value() {
             
             let vc = segue.destination as! ProductList
             
