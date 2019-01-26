@@ -24,6 +24,8 @@ class Constants {
         
         case ProductListToDetail
         case HomeToProductList
+        case HomeToCategorySearch
+        case SearchToProductList
         
         func value() -> String {
             return self.rawValue

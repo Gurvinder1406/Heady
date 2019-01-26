@@ -31,10 +31,12 @@ class MainViewController: UIViewController {
         self.performSegue(withIdentifier: Constants.Segues.HomeToProductList.value(), sender: self)
     }
  
+    @IBAction func searchCategories(_ sender: Any) {
+        self.performSegue(withIdentifier: Constants.Segues.HomeToCategorySearch.value(), sender: self)
+    }
     
     
 }
-
 
 
 extension MainViewController {

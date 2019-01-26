@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-791" y="27"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="HeadyEcommerce" sceneMemberID="viewController">
@@ -82,14 +82,66 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0v5-jg-Ljk"/>
+                    <navigationItem key="navigationItem" title="Home" id="0v5-jg-Ljk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="wvj-0Q-wsX">
+                            <connections>
+                                <action selector="searchCategories:" destination="BYZ-38-t0r" id="IMR-En-AiB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="jMh-lW-prr" kind="show" identifier="HomeToProductList" id="8ju-Tx-e5w"/>
+                        <segue destination="yTz-Og-Toa" kind="show" identifier="HomeToCategorySearch" id="zFv-ih-QDj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="60" y="27"/>
+        </scene>
+        <!--Search By Category-->
+        <scene sceneID="ylE-yf-coB">
+            <objects>
+                <viewController id="yTz-Og-Toa" customClass="SearchByCategory" customModule="HeadyEcommerce" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="61H-8d-Cyf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JhC-0s-bAo">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" id="tI9-DH-teq">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tI9-DH-teq" id="bgE-vD-mM3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yTz-Og-Toa" id="ckS-9u-8EE"/>
+                                    <outlet property="delegate" destination="yTz-Og-Toa" id="JmO-er-idJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JhC-0s-bAo" firstAttribute="top" secondItem="T2K-bG-mO1" secondAttribute="top" id="1CC-yF-VdE"/>
+                            <constraint firstAttribute="trailing" secondItem="JhC-0s-bAo" secondAttribute="trailing" id="HTi-tH-X9F"/>
+                            <constraint firstItem="JhC-0s-bAo" firstAttribute="bottom" secondItem="T2K-bG-mO1" secondAttribute="bottom" id="WZF-sl-vFa"/>
+                            <constraint firstItem="JhC-0s-bAo" firstAttribute="leading" secondItem="61H-8d-Cyf" secondAttribute="leading" id="ttI-ma-BCR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T2K-bG-mO1"/>
+                    </view>
+                    <connections>
+                        <outlet property="tv_CategoryList" destination="JhC-0s-bAo" id="Kz2-Q1-ziF"/>
+                        <segue destination="jMh-lW-prr" kind="show" identifier="SearchToProductList" id="Ymv-6v-Y5A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m83-Sm-1hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="800.14992503748135"/>
         </scene>
         <!--Product List-->
         <scene sceneID="2us-uP-rmW">
@@ -183,6 +235,7 @@
                         <viewLayoutGuide key="safeArea" id="ILc-eG-mPV"/>
                     </view>
                     <connections>
+                        <outlet property="tv_ProductList" destination="9Vc-PJ-V7Z" id="5Ub-cH-MDZ"/>
                         <segue destination="f7y-PQ-wRZ" kind="show" identifier="ProductListToDetail" id="xTR-gH-adv"/>
                     </connections>
                 </viewController>
@@ -316,4 +369,7 @@
             <point key="canvasLocation" x="1709.5999999999999" y="26.53673163418291"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8ju-Tx-e5w"/>
+    </inferredMetricsTieBreakers>
 </document>

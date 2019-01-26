@@ -39,6 +39,10 @@ class DataOperator {
         
     }
     
+    func getAllCategories() -> Array<CategoriesAndProducts> {
+        return categoryAndProductsObject?.categories ?? []
+    }
+    
     func getProductsForRanking(type: RankingTypeForProduct) -> Array<RankingProducts> {
         switch type {
             case .mostViewed:
@@ -48,6 +52,36 @@ class DataOperator {
             case .mostShared:
                 return (categoryAndProductsObject?.rankings?[2] ?? Rankings(ranking: "", products: Array<RankingProducts>())).products ?? Array<RankingProducts>()
         }
+    }
+    
+//    func getProductsForGivenCategoryAt(index: Int) -> Array<Products> {
+//
+//        let category = categoryAndProductsObject?.categories?[index]
+//        if category?.products?.count == 0 {
+//
+//        } else {
+//            return category?.products ?? []
+//        }
+//
+//        return Array<Products>()
+//    }
+    
+    func getProductsForGiven(categoryIds: [Int]) -> Array<Products> {
+        
+        let categories = categoryAndProductsObject.categories?.filter({ (categoryObject) -> Bool in
+               categoryIds.contains(categoryObject.id ?? 0)
+        })
+        
+        var products: Array<Products>! = []
+        for singleCategory in categories ?? [] {
+            if singleCategory.products?.count  == 0 {
+                products = products + self.getProductsForGiven(categoryIds: singleCategory.child_categories ?? [])
+            } else {
+                products = products + (singleCategory.products ?? [])
+            }
+        }
+        
+        return products
     }
     
     enum RankingTypeForProduct {

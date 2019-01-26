@@ -10,10 +10,12 @@ import UIKit
 
 class ProductList: UIViewController {
 
+    @IBOutlet weak var tv_ProductList: UITableView!
     var arr_Products: Array<Products> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tv_ProductList.separatorInset = UIEdgeInsets.zero
     }
     
 }
