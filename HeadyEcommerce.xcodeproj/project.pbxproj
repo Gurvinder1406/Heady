@@ -78,6 +78,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AB675A0B21FD213B000D2C6A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB8AF69421EBAE3C00746323 /* MainViewController.swift */,
+				1D55528F21FA298400F311A2 /* ProductList.swift */,
+				1D55529121FA29FB00F311A2 /* ProductListCell.swift */,
+				1DBAE68521FAF71F00737985 /* ProductDetail.swift */,
+				AB675A0921FD06E6000D2C6A /* SearchByCategory.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AB675A0C21FD2177000D2C6A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AB8AF69621EBAE3C00746323 /* Main.storyboard */,
+				AB8AF69B21EBAE3D00746323 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		AB8AF68621EBAE3C00746323 = {
 			isa = PBXGroup;
 			children = (
@@ -99,19 +120,14 @@
 		AB8AF69121EBAE3C00746323 /* HeadyEcommerce */ = {
 			isa = PBXGroup;
 			children = (
+				AB675A0C21FD2177000D2C6A /* Storyboards */,
+				AB675A0B21FD213B000D2C6A /* Controllers */,
 				1D6AE9A521F5A8A6004BE9FE /* Models */,
 				AB8AF6AB21EBB94E00746323 /* Networking */,
 				AB8AF6A421EBB4D200746323 /* Drawer */,
 				AB8AF69221EBAE3C00746323 /* AppDelegate.swift */,
-				AB8AF69421EBAE3C00746323 /* MainViewController.swift */,
 				1D6AE9A621F5BCBD004BE9FE /* DataOperator.swift */,
-				1D55528F21FA298400F311A2 /* ProductList.swift */,
-				1D55529121FA29FB00F311A2 /* ProductListCell.swift */,
-				1DBAE68521FAF71F00737985 /* ProductDetail.swift */,
-				AB675A0921FD06E6000D2C6A /* SearchByCategory.swift */,
-				AB8AF69621EBAE3C00746323 /* Main.storyboard */,
 				AB8AF69921EBAE3D00746323 /* Assets.xcassets */,
-				AB8AF69B21EBAE3D00746323 /* LaunchScreen.storyboard */,
 				AB8AF69E21EBAE3D00746323 /* Info.plist */,
 			);
 			path = HeadyEcommerce;
